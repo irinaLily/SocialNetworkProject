@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <import resource="dao.xml"/>
+    <context:component-scan base-package="serviceCore"/>
+
+    <bean id="personService" class="serviceCore.impl.PersonServiceimpl" >
+        <property name="personDao" ref="personDao"/>
+        <property name="friendshipDao" ref="friendshipDao"/>
+
+    </bean>
+
+    <bean id="interestService" class="serviceCore.impl.InterestServiceImpl">
+
+        <property name="hobbyDao" ref="hobbyDao"/>
+        <property name="placeDao" ref="placeDao"/>
+    </bean>
+    <bean id="postService" class="serviceCore.impl.PostServiseImpl">
+        <property name="personDao" ref="personDao"/>
+        <property name="postDao" ref="postDao"/>
+        <property name="messageDao" ref="messageDao"/>
+
+        <property name="postLikesDao" ref="postLikesDao"/>
+
+    </bean>
+
+    <bean id="gsonBuilder" class="com.google.gson.GsonBuilder"/>
+    <bean id="gson" class="com.google.gson.Gson" factory-bean="gsonBuilder"
+          factory-method="create"/>
+
+
+
+</beans>
+
