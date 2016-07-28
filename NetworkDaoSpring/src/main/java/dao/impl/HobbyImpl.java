@@ -64,9 +64,16 @@ public class HobbyImpl  implements HobbyDao {
 
     @Override
     @Transactional(readOnly = false)
-    public void update(HobbyDto hobbyDto) {
+    public long update(HobbyDto hobbyDto) {
         Hobby hobby=convert(hobbyDto);
         sessionFactory.getCurrentSession().saveOrUpdate(hobby);
+        return hobby.getId();
+    }
+    @Override
+    @Transactional(readOnly = false)
+    public void remove(HobbyDto hobbyDto) {
+        Hobby hobby=convert(hobbyDto);
+        sessionFactory.getCurrentSession().delete(hobby);
 
     }
 }

@@ -1,14 +1,26 @@
 package dao.model;
 
+import java.time.LocalDate;
+import java.util.List;
+
 /**
  * Created by Ирина on 04.05.2016.
  */
 public class PostDto {
-    private long id;
+    private Long id;
     private String title;
     private String content;
-    private String plase_time;
+    private LocalDate plase_time;
     private PersonDto person;
+    private List<PersonDto> postLikesPerson;
+
+    public List<PersonDto> getPostLikesPerson() {
+        return postLikesPerson;
+    }
+
+    public void setPostLikesPerson(List<PersonDto> postLikesPerson) {
+        this.postLikesPerson = postLikesPerson;
+    }
 
     public PersonDto getPerson() {
         return person;
@@ -18,11 +30,11 @@ public class PostDto {
         this.person = person;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,15 +54,13 @@ public class PostDto {
         this.content = content;
     }
 
-    public String getPlase_time() {
+    public LocalDate getPlase_time() {
         return plase_time;
     }
 
-    public void setPlase_time(String plase_time) {
+    public void setPlase_time(LocalDate plase_time) {
         this.plase_time = plase_time;
     }
-
-
 
     @Override
     public boolean equals(Object o) {
@@ -85,6 +95,7 @@ public class PostDto {
                 ", content='" + content + '\'' +
                 ", plase_time='" + plase_time + '\'' +
                 ", person=" + person.getId() +
+                ",likes Nik"+ postLikesPerson+
                 '}';
     }
 }

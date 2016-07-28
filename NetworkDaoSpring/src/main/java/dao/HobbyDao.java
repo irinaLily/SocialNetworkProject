@@ -13,6 +13,7 @@ public interface HobbyDao {
     HobbyDto findByTitle(String title);
     HobbyDto findByDescription(String description);
     long create(HobbyDto hobbyDtoDto);
-    void update(HobbyDto hobbyDtoDto);
+    long update(HobbyDto hobbyDtoDto);
+    void remove(HobbyDto hobbyDtoDto);
 
 }

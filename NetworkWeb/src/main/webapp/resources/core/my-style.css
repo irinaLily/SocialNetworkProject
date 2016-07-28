@@ -1,0 +1,140 @@
+.friend-info,.NikName {
+    cursor:pointer;
+}
+.img-circle{
+    cursor:pointer;
+}
+
+footer {
+    background-color: #cc00cc;
+    color: white;
+    padding: 15px;
+}
+#myDIV {
+    background: purple;
+    -webkit-animation: mymove1 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove1 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove1{
+    50% {background-color: blue;}
+}
+
+/* Standard syntax */
+@keyframes mymove1 {
+    50% {background-color: blue;}
+}
+.button3 {
+    background-color: white;
+    color: red;
+    border: 2px  #f44336;
+}
+
+.button3:hover {
+    background-color: #f44336;
+    color: white;
+}
+#header{
+    background-color: #cc8fc0;
+}
+#logo{
+    background-color: #cc8fc0;
+}
+#myButt1 {
+
+    background-color: purple;
+    color: white;
+    -webkit-animation: mymove 7s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 7s infinite;
+}
+.myButton {
+
+    background-color: purple;
+    color: white;
+    -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
+}
+.purple {
+     color: purple;
+ }
+.white {
+    color: white;
+    background-color: #cc8fc0;
+}
+
+#myButt {
+
+    background-color: purple;
+    color: white;
+    -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    50% {box-shadow: 10px 20px 30px blue;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    50% {box-shadow: 10px 20px 30px blue;}
+}
+#myH1 {
+    cursor:pointer;
+    border: 1px  purple;
+    width: 800px;
+    color: purple;
+    -webkit-animation: mymove2 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove2 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove2 {
+    50% {color: blue;}
+}
+
+/* Standard syntax */
+@keyframes mymove2 {
+    50% {color: blue;}
+}
+#bacground{
+    background-color: #cc8fc0;
+}
+#myH11 {
+    cursor:pointer;
+    border: 1px solid blue;
+    width: 100px;
+    color: purple;
+    -webkit-animation: mymove5 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove5 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove5 {
+    50% {color: blue;}
+}
+
+/* Standard syntax */
+@keyframes mymove2 {
+    50% {color: blue;}
+}
+#myImag {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    background-image: url('pict.jpg');
+    background-size: 20px 20px;
+    -webkit-animation: mymove3 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove3 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove3 {
+    50% {background-size: 125px 125px;}
+}
+
+/* Standard syntax */
+@keyframes mymove3 {
+    50% {background-size: 125px 125px;}
+}

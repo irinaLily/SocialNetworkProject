@@ -56,9 +56,16 @@ public class PostImpl  implements PostDao {
 
     @Override
     @Transactional(readOnly = false)
-    public void update(PostDto postDto) {
+    public long update(PostDto postDto) {
         Post post=convert(postDto);
         sessionFactory.getCurrentSession().saveOrUpdate(post);
+        return post.getId();
+    }
+    @Override
+    @Transactional(readOnly = false)
+    public void remove(PostDto postDto) {
+        Post post=convert(postDto);
+        sessionFactory.getCurrentSession().delete(post);
 
     }
 

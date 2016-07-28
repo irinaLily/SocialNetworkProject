@@ -1,19 +1,30 @@
 package dao.model;
 
+import java.util.List;
+
 /**
  * Created by Ирина on 04.05.2016.
  */
 public class HobbyDto {
-    private long id;
+    private Long id;
     private String title;
     private String description;
+    private List<PersonDto> personDtos;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<PersonDto> getPersonDtos() {
+        return personDtos;
+    }
+
+    public void setPersonDtos(List<PersonDto> personDtos) {
+        this.personDtos = personDtos;
     }
 
     public String getTitle() {

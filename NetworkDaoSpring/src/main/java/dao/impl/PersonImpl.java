@@ -20,18 +20,7 @@ import static dao.converters.EntityDtoConverter.convert;
 @Repository
 @Transactional
 public class PersonImpl  implements PersonDao {
-   /* public void init() {
-        Person person=new Person();
-        person.setLastName("Bond");
-        person.setFirstNname("Jeims");
-        person.setNicName("niki");
-        person.setBirthday(LocalDate.of(2000,12,10));
 
-        save(person);
-
-
-        getLogger().info("In init method of PersonDao");
-    }*/
    @Autowired
    private SessionFactory sessionFactory;
 
@@ -53,17 +42,25 @@ public class PersonImpl  implements PersonDao {
     }
 
     @Override
-    public PersonDto findByFierstName(String firstNname) {
-        Person person=(Person)sessionFactory.getCurrentSession().createQuery("SELECT i FROM Person i WHERE i.firstNname=:firstNname")
-                .setParameter("firstNname",firstNname).uniqueResult();
-        return person==null? null:convert(person);
+    public List<PersonDto> findByFierstName(String firstNname) {
+        List<Person> persons=sessionFactory.getCurrentSession().createQuery("SELECT i FROM Person i WHERE i.firstNname=:firstNname")
+                .setParameter("firstNname",firstNname).list();
+        List<PersonDto> personDtos=new ArrayList<>(persons.size());
+        for(Person person:persons){
+            personDtos.add(convert(person));
+        }
+        return personDtos;
     }
 
     @Override
-    public PersonDto findByLastName(String lastName) {
-        Person person=(Person)sessionFactory.getCurrentSession().createQuery("SELECT i FROM Person i WHERE i.lastName=:lastName")
-                .setParameter("lastName",lastName).uniqueResult();
-        return person==null? null:convert(person);
+    public List<PersonDto> findByLastName(String lastName) {
+        List<Person> persons=sessionFactory.getCurrentSession().createQuery("SELECT i FROM Person i WHERE i.lastName=:lastName")
+                .setParameter("lastName",lastName).list();
+        List<PersonDto> personDtos=new ArrayList<>(persons.size());
+        for(Person person:persons){
+            personDtos.add(convert(person));
+        }
+        return personDtos;
     }
 
     @Override
@@ -100,8 +97,16 @@ public class PersonImpl  implements PersonDao {
 
     @Override
     @Transactional(readOnly = false)
-    public void update(PersonDto personDto) {
+    public long update(PersonDto personDto) {
         Person person=convert(personDto);
         sessionFactory.getCurrentSession().saveOrUpdate(person);
+        return person.getId();
+    }
+
+    @Override
+    @Transactional(readOnly = false)
+    public void remove(PersonDto personDto) {
+        Person person=convert(personDto);
+        sessionFactory.getCurrentSession().delete(person);
     }
 }

@@ -1,6 +1,7 @@
 package dao.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 /**
  * Created by Ирина on 22.04.2016.
@@ -17,7 +18,7 @@ public class Post implements HasID {
     @Column(name = "CONTENT")
     private  String content;
     @Column(name = "PLASE_TAME")
-    private String plase_time;
+    private LocalDate plase_time;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PERSON_ID")
     private Person person;
@@ -55,11 +56,11 @@ public class Post implements HasID {
         this.content = content;
     }
 
-    public String getPlase_time() {
+    public LocalDate getPlase_time() {
         return plase_time;
     }
 
-    public void setPlase_time(String plase_time) {
+    public void setPlase_time(LocalDate plase_time) {
         this.plase_time = plase_time;
     }
 

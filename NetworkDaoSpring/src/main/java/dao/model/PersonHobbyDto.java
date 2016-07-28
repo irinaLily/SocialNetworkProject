@@ -4,8 +4,17 @@ package dao.model;
  * Created by Ирина on 24.05.2016.
  */
 public class PersonHobbyDto {
+    private Long id;
     private HobbyDto hobbyDto;
     private PersonDto personDto;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public HobbyDto getHobbyDto() {
         return hobbyDto;

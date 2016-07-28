@@ -1,27 +1,35 @@
 package dao.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by Ирина on 04.05.2016.
  */
 public class PersonDto {
-    private long id;
+    private Long id;
     private String firstNname;
     private String lastName;
     private LocalDate birthday;
     private String nicName;
+    private List<PlaceDto> placeDtos;
 
-
-
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
+
+    public List<PlaceDto> getPlaceDtos() {
+        return placeDtos;
+    }
+
+    public void setPlaceDtos(List<PlaceDto> placeDtos) {
+        this.placeDtos = placeDtos;
+    }
+
+    public Long getId() {
+        return id;
+    }
+    
 
     public String getFirstNname() {
         return firstNname;

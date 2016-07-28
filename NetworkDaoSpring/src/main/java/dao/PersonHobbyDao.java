@@ -16,5 +16,6 @@ public interface PersonHobbyDao {
     List<PersonHobbyDto> findAllHobbyPerson(Long idPerson,Long idHobby);
 
     long create(PersonHobbyDto personHobbyDto);
-    void update(PersonHobbyDto personHobbyDto);
+    long update(PersonHobbyDto personHobbyDto);
+    void remove(PersonHobbyDto personHobbyDto);
 }

@@ -75,9 +75,18 @@ public class FriendshipImpl implements FriendshipDao {
 
     @Override
     @Transactional(readOnly = false)
-    public void update(FriendshipDto friendshipDto) {
+    public long update(FriendshipDto friendshipDto) {
         Friendship friendship=convert(friendshipDto);
         sessionFactory.getCurrentSession().saveOrUpdate(friendship);
+        return friendship.getId();
 
     }
+    @Override
+    @Transactional(readOnly = false)
+    public void remove(FriendshipDto friendshipDto) {
+        Friendship friendship=convert(friendshipDto);
+        sessionFactory.getCurrentSession().delete(friendship);
+
+    }
+
 }

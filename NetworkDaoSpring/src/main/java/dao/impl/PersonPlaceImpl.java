@@ -77,9 +77,16 @@ public class PersonPlaceImpl implements PersonPlaceDao {
 
     @Override
     @Transactional(readOnly = false)
-    public void update(PersonPlaceDto personPlaceDto) {
+    public long update(PersonPlaceDto personPlaceDto) {
         PersonPlace personPlace=convert(personPlaceDto);
         sessionFactory.getCurrentSession().saveOrUpdate(personPlace);
+        return personPlace.getId();
+    }
+    @Override
+    @Transactional(readOnly = false)
+    public void remove(PersonPlaceDto personPlaceDto) {
+        PersonPlace personPlace=convert(personPlaceDto);
+        sessionFactory.getCurrentSession().delete(personPlace);
 
     }
 }

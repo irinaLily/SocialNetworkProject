@@ -13,13 +13,14 @@ import java.util.Set;
 public interface PersonDao  {
     List<PersonDto> findAll();
     PersonDto findById(long id);
-    PersonDto findByFierstName(String fierstName);
-    PersonDto findByLastName(String lastName);
+    List<PersonDto> findByFierstName(String fierstName);
+    List<PersonDto> findByLastName(String lastName);
     PersonDto findByNickname(String nickname);
     PersonDto findByBirthday(LocalDate birthdat);
     Set<PersonDto> findAllfriend();
 
     Set<PostDto> findAllPost();
     long create(PersonDto personDto);
-    void update(PersonDto personDto);
+    long update(PersonDto personDto);
+    void remove(PersonDto personDto);
 }

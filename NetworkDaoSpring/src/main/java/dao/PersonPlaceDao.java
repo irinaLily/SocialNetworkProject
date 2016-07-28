@@ -16,5 +16,6 @@ public interface PersonPlaceDao {
     List<PersonPlaceDto> findAllPlacePerson(Long idPerson,Long idPlace);
 
     long create(PersonPlaceDto personPlaceDto);
-    void update(PersonPlaceDto personPlaceDto);
+    long update(PersonPlaceDto personPlaceDto);
+    void remove(PersonPlaceDto personPlaceDto);
 }

@@ -53,9 +53,16 @@ public class MessageImpl  implements MessageDao{
 
     @Override
     @Transactional(readOnly = false)
-    public void update(MessageDto messageDto) {
+    public long update(MessageDto messageDto) {
         Message message=convert(messageDto);
         sessionFactory.getCurrentSession().saveOrUpdate(message);
+        return message.getId();
+    }
+    @Override
+    @Transactional(readOnly = false)
+    public void remove(MessageDto messageDto) {
+        Message message=convert(messageDto);
+        sessionFactory.getCurrentSession().delete(message);
 
     }
 
@@ -78,6 +85,20 @@ public class MessageImpl  implements MessageDao{
         List<MessageDto> messageDtos = new ArrayList<>(messages.size());
         for (Message message : messages) {
             messageDtos.add(convert(message));
+        }
+        return messageDtos;
+
+    }
+    @Override
+    public List<MessageDto> findAllPersonToLatest(Long id) {
+        List<Message> messages = sessionFactory.getCurrentSession().createQuery("select  i from Message i where  i.personTo.id=:id order by i.timeSent DESC  ")
+                .setParameter("id",id).list();
+        List<MessageDto> messageDtos = new ArrayList<>(messages.size());
+        int i=0;
+        for (Message message : messages) {
+            messageDtos.add(convert(message));
+            i++;
+            if(i==2) break;
         }
         return messageDtos;
 

@@ -4,8 +4,17 @@ package dao.model;
  * Created by Ирина on 23.05.2016.
  */
 public class PersonPlaceDto {
+    private Long id;
     private PlaceDto placeDto;
     private PersonDto personDto;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public PlaceDto getPlaceDto() {
         return placeDto;

@@ -14,7 +14,8 @@ public final class EntityDtoConverter {
             return null;
         }
         Friendship friendship = new Friendship();
-        friendship.setId((friendshipDto.getId()));
+        if(friendshipDto.getId()!=null){
+        friendship.setId((friendshipDto.getId()));}
         friendship.setPersonId(convert(friendshipDto.getPersonId()));
         friendship.setFriendId(convert(friendshipDto.getFriendId()));
         friendship.setDataFrom(friendshipDto.getDataFrom());
@@ -38,7 +39,8 @@ public final class EntityDtoConverter {
             return null;
         }
         Hobby hobby=new Hobby();
-        hobby.setId(hobbyDto.getId());
+        if(hobbyDto.getId()!=null){
+        hobby.setId(hobbyDto.getId());}
         hobby.setTitle(hobbyDto.getTitle());
         hobby.setDescription(hobbyDto.getDescription());
         return hobby;
@@ -73,7 +75,8 @@ public final class EntityDtoConverter {
             return null;
         }
         Place place=new Place();
-        place.setId(placeDto.getId());
+        if(placeDto.getId()!=null){
+        place.setId(placeDto.getId());}
         place.setTitle(placeDto.getTitle());
         place.setDescription(placeDto.getDescription());
         place.setLatitude(placeDto.getLatitude());
@@ -86,7 +89,8 @@ public final class EntityDtoConverter {
             return null;
         }
         Message message=new Message();
-        message.setId(messageDto.getId());
+        if(messageDto.getId()!=null){
+        message.setId(messageDto.getId());}
         message.setContent(messageDto.getContent());
         message.setTimeSent(messageDto.getTimeSent());
         System.out.println("messageDto.getPersonFrom()"+messageDto.getPersonFrom());
@@ -112,6 +116,8 @@ public final class EntityDtoConverter {
             return null;
         }
         PostLikes postLikes=new PostLikes();
+        if(postlikesDto.getId()!=null){
+        postLikes.setId(postlikesDto.getId());}
         postLikes.setPostId(convert(postlikesDto.getPostId()));
         postLikes.setPersonId(convert(postlikesDto.getPersonId()));
         return postLikes;
@@ -122,6 +128,7 @@ public final class EntityDtoConverter {
             return null;
         }
         PostLikesDto postLikesDto=new PostLikesDto();
+        postLikesDto.setId(postlikes.getId());
         postLikesDto.setPostId(convert(postlikes.getPostId()));
         postLikesDto.setPersonId(convert(postlikes.getPersonId()));
         return postLikesDto;
@@ -132,7 +139,8 @@ public final class EntityDtoConverter {
             return null;
         }
         Post post=new Post();
-        post.setId(postDto.getId());
+        if(postDto.getId()!=null){
+        post.setId(postDto.getId());}
         post.setTitle(postDto.getTitle());
         post.setContent(postDto.getContent());
         post.setPlase_time(postDto.getPlase_time());
@@ -166,7 +174,8 @@ public final class EntityDtoConverter {
         }
         Person person=new Person();
         System.out.println("personDto.getId()"+personDto.getId());
-        person.setId(personDto.getId());
+        if(personDto.getId()!=null){
+        person.setId((long)personDto.getId());}
         person.setFirstNname(personDto.getFirstNname());
         person.setLastName(personDto.getLastName());
         person.setBirthday(personDto.getBirthday());
@@ -194,6 +203,8 @@ public final class EntityDtoConverter {
              return null;
          }
          PersonPlace personPlace=new PersonPlace();
+         if(personPlaceDto.getId()!=null){
+         personPlace.setId(personPlaceDto.getId());}
          personPlace.setPlace(convert(personPlaceDto.getPlaceDto()));
          personPlace.setPerson(convert(personPlaceDto.getPersonDto()));
          return personPlace;
@@ -204,6 +215,7 @@ public final class EntityDtoConverter {
             return null;
         }
         PersonPlaceDto personPlaceDto=new PersonPlaceDto();
+        personPlaceDto.setId(personPlace.getId());
         personPlaceDto.setPlaceDto(convert(personPlace.getPlace()));
         personPlaceDto.setPersonDto(convert(personPlace.getPerson()));
         return personPlaceDto;
@@ -214,6 +226,8 @@ public final class EntityDtoConverter {
             return null;
         }
         PersonHobby personHobby=new PersonHobby();
+        if(personHobbyDto.getId()!=null){
+        personHobby.setId(personHobbyDto.getId());}
         personHobby.setHobby(convert(personHobbyDto.getHobbyDto()));
         personHobby.setPerson(convert(personHobbyDto.getPersonDto()));
         return personHobby;
@@ -224,6 +238,7 @@ public final class EntityDtoConverter {
             return null;
         }
         PersonHobbyDto personHobbyDto=new PersonHobbyDto();
+        personHobbyDto.setId(personHobbyDto.getId());
         personHobbyDto.setHobbyDto(convert(personHobby.getHobby()));
         personHobbyDto.setPersonDto(convert(personHobby.getPerson()));
         return personHobbyDto;

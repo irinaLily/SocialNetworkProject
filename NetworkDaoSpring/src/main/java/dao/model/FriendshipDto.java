@@ -6,7 +6,7 @@ import java.time.LocalDate;
  * Created by Ирина on 04.05.2016.
  */
 public class FriendshipDto {
-    private long id;
+    private Long id;
     private PersonDto personId;
     private PersonDto friendId;
     private LocalDate dataFrom;
@@ -15,11 +15,11 @@ public class FriendshipDto {
         return personId;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

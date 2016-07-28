@@ -13,6 +13,18 @@
     <context:component-scan base-package="practice.network.web" />
 
     <mvc:annotation-driven />
+    <import resource="classpath:spring/core.xml"/>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/pages/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />
 
 
 </beans>

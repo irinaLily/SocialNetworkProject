@@ -65,7 +65,11 @@
             <artifactId>jackson-core</artifactId>
             <version>2.5.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>network</groupId>
+            <artifactId>networkCoreSpring</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>network-web</finalName>

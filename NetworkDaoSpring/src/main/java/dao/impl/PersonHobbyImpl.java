@@ -80,8 +80,15 @@ public class PersonHobbyImpl implements PersonHobbyDao{
 
     @Override
     @Transactional(readOnly = false)
-    public void update(PersonHobbyDto personHobbyDto) {
+    public long update(PersonHobbyDto personHobbyDto) {
         PersonHobby personHobby=convert(personHobbyDto);
         sessionFactory.getCurrentSession().saveOrUpdate(personHobby);
+        return personHobby.getId();
+    }
+    @Override
+    @Transactional(readOnly = false)
+    public void remove(PersonHobbyDto personHobbyDto) {
+        PersonHobby personHobby=convert(personHobbyDto);
+        sessionFactory.getCurrentSession().delete(personHobby);
     }
 }

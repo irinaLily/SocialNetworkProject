@@ -12,6 +12,7 @@ public interface PlaceDao  {
     PlaceDto findById(long id);
     PlaceDto findByTitle(String title);
     long create(PlaceDto placeDto);
-    void update(PlaceDto placeDto);
+    long update(PlaceDto placeDto);
+    void remove(PlaceDto placeDto);
 
 }

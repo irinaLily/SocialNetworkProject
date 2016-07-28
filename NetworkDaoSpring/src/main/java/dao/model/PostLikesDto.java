@@ -4,8 +4,17 @@ package dao.model;
  * Created by Ирина on 04.05.2016.
  */
 public class PostLikesDto {
+    private Long id;
     private PostDto postId;
     private PersonDto personId;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public PostDto getPostId() {
         return postId;

@@ -14,6 +14,7 @@ public interface PostDao {
     PostDto findById(long id);
     PostDto findByTitle(String title);
     long create(PostDto postDto);
-    void update(PostDto postDto);
+    long update(PostDto postDto);
+    void remove(PostDto postDto);
     List<PostDto> findPostByPerson(long id);
 }

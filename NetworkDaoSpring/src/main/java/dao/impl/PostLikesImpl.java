@@ -77,9 +77,16 @@ public class PostLikesImpl implements PostLikesDao {
 
     @Override
     @Transactional(readOnly = false)
-    public void update(PostLikesDto postLikesDto) {
+    public long update(PostLikesDto postLikesDto) {
         PostLikes postLikes=convert(postLikesDto);
-        sessionFactory.getCurrentSession().save(postLikes);
+        sessionFactory.getCurrentSession().saveOrUpdate(postLikes);
+        return postLikes.getId();
+    }
+    @Override
+    @Transactional(readOnly = false)
+    public void remove(PostLikesDto postLikesDto) {
+        PostLikes postLikes=convert(postLikesDto);
+        sessionFactory.getCurrentSession().delete(postLikes);
 
     }
 }

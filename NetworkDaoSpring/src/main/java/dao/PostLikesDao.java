@@ -16,5 +16,6 @@ public interface PostLikesDao {
     List<PostLikesDto> findAllPostPerson(Long idPerson,Long idPost);
 
     long create(PostLikesDto postLikesDto);
-    void update(PostLikesDto postLikesDto);
+    long update(PostLikesDto postLikesDto);
+    void remove(PostLikesDto postLikesDto);
 }

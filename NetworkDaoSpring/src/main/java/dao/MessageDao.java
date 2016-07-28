@@ -14,7 +14,9 @@ public interface MessageDao  {
 
     List<MessageDto> findAllPersonFrom(Long id);
     List<MessageDto> findAllPersonTo(Long id);
+    public List<MessageDto> findAllPersonToLatest(Long id);
 
     long create(MessageDto messageDto);
-    void update(MessageDto messageDto);
+    long update(MessageDto messageDto);
+    void remove(MessageDto messageDto);
 }

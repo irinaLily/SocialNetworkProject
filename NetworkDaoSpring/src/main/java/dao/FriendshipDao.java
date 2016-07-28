@@ -13,5 +13,6 @@ public interface FriendshipDao  {
     List<FriendshipDto>  findAllFriend(Long id);
     FriendshipDto  findPersonFriend(long idPerson,long idFriend);
     long create(FriendshipDto friendshipDto);
-    void update(FriendshipDto friendshipDto);
+    long update(FriendshipDto friendshipDto);
+    void remove(FriendshipDto friendshipDto);
 }

@@ -56,7 +56,14 @@ public class PlaceImpl  implements PlaceDao {
 
     @Override
     @Transactional(readOnly = false)
-    public void update(PlaceDto placeDto) {
-        sessionFactory.getCurrentSession().save(convert(placeDto));
+    public long  update(PlaceDto placeDto) {
+        Place place=convert(placeDto);
+        sessionFactory.getCurrentSession().saveOrUpdate(place);
+        return place.getId();
+    }
+    @Override
+    @Transactional(readOnly = false)
+    public void remove(PlaceDto placeDto) {
+        sessionFactory.getCurrentSession().delete(convert(placeDto));
     }
 }

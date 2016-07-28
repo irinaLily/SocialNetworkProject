@@ -22,6 +22,9 @@
 
         <property name="hobbyDao" ref="hobbyDao"/>
         <property name="placeDao" ref="placeDao"/>
+        <property name="personDao" ref="personDao"/>
+        <property name="personPlaceDao" ref="personPlaceDao"/>
+        <property name="personHobbyDao" ref="personHobbyDao"/>
     </bean>
     <bean id="postService" class="serviceCore.impl.PostServiseImpl">
         <property name="personDao" ref="personDao"/>
